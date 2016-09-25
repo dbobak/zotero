@@ -11,7 +11,7 @@
 "displayOptions":{
 	"exportCharset":"UTF-8"
 	},
-"lastUpdated":"2016-05-24 16:35:00"
+"lastUpdated":"2016-09-25 20:00:00"
 }
  
 var webdavPath = "{{WebDAVURI}}";
@@ -509,10 +509,12 @@ function doExport() {
 //		topicname = "(" + topicname + ")"
 		// write out properties
 		var pagetext = [
+			"<ref>",
 			Zotero.Utilities.htmlSpecialChars(citation),
 			"[" + Zotero.Utilities.htmlSpecialChars(ZoteroLocal) + " Zotero local]",
 			"[" + Zotero.Utilities.htmlSpecialChars(ZoteroLink) + " Zotero link]",
 			"BibTeX key: " + BibTeXkey,
+			"</ref>"
 			]. join( " {{bullet}} " );
 		Zotero.write(pagetext);
 		first = false;
