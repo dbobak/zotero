@@ -509,12 +509,10 @@ function doExport() {
 //		topicname = "(" + topicname + ")"
 		// write out properties
 		var pagetext = [
-			"<ref>",
-			Zotero.Utilities.htmlSpecialChars(citation),
+			"<ref name = \"" + BibTeXkey + "\" \/>" + "\n" + "<ref name = \"" + BibTeXkey + "\">" + Zotero.Utilities.htmlSpecialChars(citation),
 			"[" + Zotero.Utilities.htmlSpecialChars(ZoteroLocal) + " Zotero local]",
 			"[" + Zotero.Utilities.htmlSpecialChars(ZoteroLink) + " Zotero link]",
-			"BibTeX key: " + BibTeXkey,
-			"</ref>"
+			"BibTeX key: " + BibTeXkey + "</ref>"
 			]. join( " {{bullet}} " );
 		Zotero.write(pagetext);
 		first = false;
