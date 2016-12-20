@@ -27,7 +27,7 @@ function doExport() {
 	var first = true;
 	while(item = Zotero.nextItem()) {
 	var pagetext = [
-		" [[CiteRef::",
+		"[[CiteRef::",
 		Zotero.BetterBibTeX.keymanager.get(item, 'on-export').citekey,
 		"]] "
 		].join("");
