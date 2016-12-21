@@ -773,7 +773,18 @@ function encodeFilePathComponent(value) {
 			// 		writeField("file", attachmentString.substr(1));
 			// 	}
 			// }
-
+			var library_id = item.libraryID ? item.libraryID : 0;
+			var ZoteroLocal = ('zotero://select/items/' + library_id + '_' + item.key);
+			var ZoteroLink = item.uri;
+			var BibTeXkey = Zotero.BetterBibTeX.keymanager.get(item, 'on-export').citekey;
+			var linkstext = [
+				// Zotero.Utilities.htmlSpecialChars(citation),
+				"[" + Zotero.Utilities.htmlSpecialChars(ZoteroLocal) + " Zotero local]",
+				"[" + Zotero.Utilities.htmlSpecialChars(ZoteroLink) + " Zotero link]",
+				"BibTeX key: " + BibTeXkey,
+				]. join( " {{bullet}} " );
+			Zotero.write(",\n\tzoterolinks = " + linkstext);
+			// Zotero.write("\n\t|zoterolinks = [" + Zotero.Utilities.htmlSpecialChars(ZoteroLocal) + " Zotero local] {{bullet}} [" + Zotero.Utilities.htmlSpecialChars(ZoteroLink) + " Zotero link]");
 			Zotero.write("\n}\n}}");
 		}
 	}
