@@ -366,11 +366,13 @@ Exporter = (function() {
     medium: {},
     'original-publisher': {
       BibLaTeX: 'origpublisher',
-      type: 'literal'
+//deni      type: 'literal'
+      type: 'raw'
     },
     'original-publisher-place': {
       BibLaTeX: 'origlocation',
-      type: 'literal'
+//deni      type: 'literal'
+      type: 'raw'
     },
     'original-title': {
       BibLaTeX: 'origtitle'
@@ -382,7 +384,8 @@ Exporter = (function() {
     publisher: {},
     'publisher-place': {
       BibLaTeX: 'location',
-      type: 'literal'
+//deni      type: 'literal'
+      type: 'raw'
     },
     references: {},
     'reviewed-title': {},
@@ -13825,9 +13828,9 @@ Reference.prototype.fieldEncoding = {
   verba: 'verbatim',
   verbb: 'verbatim',
   verbc: 'verbatim',
-  institution: 'literal',
-  publisher: 'literal',
-  location: 'literal'
+  institution: 'raw',
+  publisher: 'raw',
+  location: 'raw'
 };
 
 Reference.prototype.caseConversion = {
