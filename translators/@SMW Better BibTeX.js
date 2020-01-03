@@ -12894,8 +12894,8 @@ class Reference {
         ref = '{{#scite:\n|bibtex=' + ref; //deni
         ref += fields.join(',\n');
                 //deni stąd
-        //    var library_id = zotero.zotero.libraryID;
-            var ZoteroLocal = ('zotero://select/items/' + this.item.itemID);
+			var library_id = this.item.libraryID ? this.item.libraryID : 0;
+            var ZoteroLocal = ('zotero://select/items/' + library_id + "_" + this.item.key);
             var ZoteroLink = this.item.uri;
             var linkstext = [
         //        // Zotero.Utilities.htmlSpecialChars(citation),
