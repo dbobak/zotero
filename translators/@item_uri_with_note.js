@@ -1,7 +1,7 @@
 {
 	"translatorID": "a515a220-6fef-0111-1974-8025dfebbb8f",
 	"label": "@Item URI with note",
-	"creator": "Emiliano Heyns, Dariusz Bobak",
+	"creator": "Dariusz Bobak",
 	"target": "txt",
 	"minVersion": "4.0.27",
 	"translatorType": 2,
@@ -11,7 +11,7 @@
 		"quickCopyMode": ""
 	},
 	"inRepository": false,
-	"lastUpdated": "2020-08-30 21:03:52"
+	"lastUpdated": "2020-08-31 21:03:52"
 }
 
 function doExport() {
@@ -43,6 +43,7 @@ function doExport() {
 		Zotero.write(item.uri + "]] [ext[local|");
 		Zotero.write("zotero://select/items/");
 		var library_id = item.libraryID ? item.libraryID : 0;
-		Zotero.write(library_id + "_" + item.key + "]]'>>");
+		Zotero.write(library_id + "_" + item.key + "]]");
+		Zotero.write(", Key: " + item.citationKey + "'>>");
 	}
 }
